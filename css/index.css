@@ -1,0 +1,266 @@
+body {
+    margin: 0;
+    padding: 5px;
+    background-color: #121212;
+}
+
+
+.cabeçalho {
+display: flex;
+justify-content: space-between;
+background-color: #121212;
+border-bottom: 2px solid gray;
+}
+
+
+.cabeçalho a {
+background-color:  #E53935;
+border-radius: 5px;
+color: #F5F5F5;
+padding: 5px;
+width: 60px;
+text-decoration: none;
+display: flex;
+justify-content: center;
+}
+
+
+.cabeçalho a:hover {
+color: rgb(207, 204, 204);
+}
+
+.navegar {
+    display: flex;
+}
+
+
+.navegar li {
+    display: flex;
+    margin: 10px;
+}
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #121212;
+  color: #F5F5F5;
+  padding: 25px;
+}
+
+
+.container a {
+background-color:  #E53935;
+border-radius: 5px;
+color: #F5F5F5;
+padding: 5px;
+text-decoration: none;
+}
+
+
+.container a:hover{
+color: rgb(207, 204, 204);
+}
+
+
+.destaques {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #121212;
+    color: #F5F5F5;
+    padding: 25px;
+}
+
+.destaques_produtos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+
+.produto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid gray;
+    border-radius: 5px;
+    width: 50%;
+    padding: 15px;
+}
+
+
+.produto img {
+    width: 60%;
+    height: 60%;
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+
+.produto img:hover {
+    width: 80%;
+    height: 80%;
+    transition: 0.3s;
+}
+
+
+.comprar {
+    background-color: #E53935;
+    border: #E53935;
+    border-radius: 5px;
+    transform: scale(1.2);
+    padding: 5px;
+}
+
+.comprar:hover {
+    background-color: rgb(207, 63, 63);
+}
+
+
+.entrar {
+    background-color: #E53935;
+    border: #E53935;
+    border-radius: 5px;
+    transform: scale(1.2);
+    padding: 5px;
+}
+
+.entrar:hover {
+    background-color: rgb(207, 63, 63);
+}
+
+
+.voltar {
+    background-color: #E53935;
+    border: #E53935;
+    color: #000;
+    border-radius: 5px;
+    transform: scale(1.2);
+    padding: 5px;
+    text-decoration: none;
+    position: absolute;
+    top: 6px;
+    left: 8px;
+}
+
+
+.voltar:hover {
+    background-color: rgb(207, 63, 63);
+    color: #000;
+}
+
+
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 20%;
+    left: 25%;
+    position: absolute;
+    border: 2px solid gray;
+    width: 50%;
+    height: 50%;
+}
+
+
+.login form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 50px;
+    gap: 10px;
+    transform: scale(1.6);
+}
+
+
+.login a:hover {
+    color: blue;
+}
+
+.input_nome {
+    border-radius: 5px;
+    width: 120%;
+    padding: 5px;
+} 
+
+
+.input_senha {
+    border-radius: 5px;
+    width: 120%;
+    padding: 5px;
+} 
+
+
+.perfil_user {
+    color: #F5F5F5;   
+}
+
+
+.perfil {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid gray;
+    width: 50%;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+
+.perfil img{
+ border-radius: 50%;
+}
+
+
+.perfil_descrição {
+    display: flex;
+    flex-direction: column;
+    padding-right: 25px;
+}
+
+
+.pedidos_user {
+    color: #F5F5F5;
+}
+
+
+.pedidos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid gray;
+    border-radius: 5px;
+    width: 50%;
+    height: auto;
+    box-sizing: border-box;
+    padding: 15px;
+}
+
+
+.contato {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #121212;
+    color: #F5F5F5;
+    border: 2px solid gray;
+    padding: 25px;
+    width: 50%;
+}
+
+.enviar {
+    display: flex;
+    background-color: #E53935;
+    border: #E53935;
+    border-radius: 5px;
+    transform: scale(1.2);
+    padding: 5px;
+
+}
