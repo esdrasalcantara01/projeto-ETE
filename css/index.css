@@ -15,7 +15,7 @@ border-bottom: 2px solid gray;
 
 .cabeçalho a {
 background-color:  #E53935;
-border-radius: 5px;
+border-radius: 50px;
 color: #F5F5F5;
 padding: 5px;
 width: 60px;
@@ -29,6 +29,7 @@ justify-content: center;
 color: rgb(207, 204, 204);
 }
 
+
 .navegar {
     display: flex;
 }
@@ -40,13 +41,22 @@ color: rgb(207, 204, 204);
 }
 
 
+.home {
+    display: flex;
+    flex-direction: row;
+}
+
+
 .container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
   background-color: #121212;
+  width: 50%;
   color: #F5F5F5;
   padding: 25px;
+  margin-left: 40px;
 }
 
 
@@ -73,6 +83,7 @@ color: rgb(207, 204, 204);
     color: #F5F5F5;
     padding: 25px;
 }
+
 
 .destaques_produtos {
     display: flex;
@@ -116,6 +127,7 @@ color: rgb(207, 204, 204);
     padding: 5px;
 }
 
+
 .comprar:hover {
     background-color: rgb(207, 63, 63);
 }
@@ -128,6 +140,7 @@ color: rgb(207, 204, 204);
     transform: scale(1.2);
     padding: 5px;
 }
+
 
 .entrar:hover {
     background-color: rgb(207, 63, 63);
@@ -182,6 +195,7 @@ color: rgb(207, 204, 204);
 .login a:hover {
     color: blue;
 }
+
 
 .input_nome {
     border-radius: 5px;
@@ -255,6 +269,7 @@ color: rgb(207, 204, 204);
     width: 50%;
 }
 
+
 .enviar {
     display: flex;
     background-color: #E53935;
@@ -262,5 +277,4 @@ color: rgb(207, 204, 204);
     border-radius: 5px;
     transform: scale(1.2);
     padding: 5px;
-
 }
