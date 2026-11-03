@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="darkreader-lock">
+    <title>Tech Hole</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'index.css')}}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename = 'img/favicon.jpeg')}} " type="image/x-icon">
+</head>
+<body>
+    <div class="cabeçalho">
+    <img src="{{ url_for('static', filename = 'img/logo.jpeg')}}">
+    
+    <ul class="navegar">
+        <li><a href="{{ url_for('home') }}"
+             class="{{ 'active' if request.endpoint == 'home' }}">início</a></li>
+
+        <li><a href="{{ url_for('produtos') }}"
+             class="{{ 'active' if request.endpoint == 'produtos' }}">produtos</a></li>
+
+        <li><a href="{{ url_for('sobre') }}"
+             class="{{ 'active' if request.endpoint == 'sobre' }}">sobre</a></li>
+
+        <li><a href="{{ url_for('contato') }}"
+             class="{{ 'active' if request.endpoint == 'contato' }}">contato</a></li>
+        
+
+        <form action="{{ url_for('produtos') }}" method="get">
+           <div class="campo_busca">
+               <input type="search" name="busca" placeholder="Buscar produtos..." required>
+               <button type="submit" aria-label="Pesquisar">
+                <svg xmlns="http://www.w3.org/2000/svg" 
+                width="24" height="24" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                stroke="currentColor" 
+                stroke-width="2" 
+                stroke-linecap="round" 
+                stroke-linejoin="round" 
+                class="lucide lucide-search preview-icon">
+                <path d="m21 21-4.34-4.34"/>
+                <circle cx="11" cy="11" r="8"/></svg>
+               </button>
+           </div> 
+        </form>
+
+        {% if not current_user.is_authenticated %}
+        <button class="Entrar"> 
+            <a href="{{ url_for('login')}}">Entrar</a> 
+        </button> 
+        
+        <button class="Cadastrar"> 
+            <a href="{{ url_for('cadastrar')}}">Cadastrar</a> 
+        </button>
+
+        {% else %}
+        <p>Olá, {{ current_user.nome.splint()[0] }}! </p>
+        {% endif %}
+    </ul>
+</div>
+
+
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="home">
+    
+    <div class="container_home">
+        <h2>TECNOLOGIA</h2>
+        <h2>PARA O SEU <span style="color: #1677d2;">SETUP</span></h2>
+    
+        <h3>Encontre componentes, periféricos e acessórios <br>
+            com qualidade e preços acessíveis. </h3>
+        <a href="{{ url_for('produtos') }}" class="ver_produtos">VER PRODUTOS &rarr;</a>
+    </div>
+    
+    <div class="destaques">
+        <h2>DESTAQUES</h2>
+    
+        <div class="destaques_produtos">
+            <div class="produto">
+                <h3>Placa de Vídeo</h3>
+                <img src="https://patoloco.com.br/resize/imagecache/651555f6f1aacbed847b7847b01e0600.jpeg">
+                <div class="detalhes">
+                    <h2>R$ 20,00</h2> <p class="ver_mais">Ver mais</p>
+                </div>
+            </div>
+    
+    
+            <div class="produto">
+                <h3>Processador</h3>
+                <img src="https://images.tcdn.com.br/img/img_prod/740836/processador_intel_core_i5_14400_14_geracao_lga_1700_3_5ghz_cache_20_mb_oem_tray_24749_3_4a7fae51da927b958bdf2c93cba730e1.png">
+                <div class="detalhes">
+                    <h2>R$ 40,00</h2> <p class="ver_mais">Ver mais</p>
+                </div>
+            </div>
+    
+    
+            <div class="produto">
+                <h4>SSD</h4>
+                <img src="https://images.tcdn.com.br/img/img_prod/1314128/sandisk_hd_ssd_de_1tb_plus_ssd_sata_iii_de_2_5_polegadas_3631_2_dfa6cc803184e6fdee2d5197f1191255.jpeg">
+                <div class="detalhes">
+                    <h2>R$ 10,00</h2> <p class="ver_mais">Ver mais</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+{% endblock %}

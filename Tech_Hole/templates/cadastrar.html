@@ -1,33 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
-     <link rel="stylesheet" href="css/index.css">
-    <link rel="shortcut icon" href="img/ChatGPT Image 11 de set. de 2026, 21_54_37.png" type="image/x-icon">
+{% extends 'base.html' %}
+{% block content %}
 
-</head>
-<body>
     <div class="login">
         <a href="index.html"    
         onmouseover="this.style.setProperty('color', 'black', 'important')" 
         class="voltar">&larr;Voltar</a>
-        <h1 style="color: whitesmoke;">Cadastro</h1>
-        <form method="post">
-            <input type="text" placeholder="nome" class="input_nome">
-            <input type="email" placeholder="E-mail" class="input_nome">
-            <input type="password" placeholder="senha" class="input_senha">
-            <button type="submit" class="entrar">Entrar</button>
+        <h1 style="color: whitesmoke;">Crie sua conta</h1>
+        <p>É rápido e você já pode começar a comprar.</p>
+
+        <form method="post" autocomplete="off">
+            {{ form1.csrf_token }}
+            {{ form1.hidden_tag() }}
+
+            <p>Nome: </p>
+            {{ form1.nome(placeholder = "nome", class="input_form") }}
+
+            <p>E-mail: </p>
+            {{ form1.email(placeholder = "E-mail", class="input_form") }}
+
+            <p>Senha: </p>
+            {{ form1.senha(placeholder = "senha, ", class="input_form") }}
+
+            {{ form1.enviar(class="entrar")}}
         </form>
-        <p style="color: whitesmoke;">já possui uma conta? </p>
-            <a href="login.html" 
-            style="color: red; text-decoration: none;
-            height: 10%;
-            width: 50%;
-            text-align: center;">
-            Login</a>
-        
+
+        <div class="Fazer_login">
+            <p>já possui uma conta? </p> <a href="{{ url_for('login')}}"> Fazer Login</a>
+        </div>
+
     </div>
-</body>
-</html>
+{% endblock %}
