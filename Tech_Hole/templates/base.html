@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="darkreader-lock">
-    <title>Tech Hole</title>
+    <title>Personalize</title>
     <link rel="stylesheet" href="{{ url_for('static', filename = 'index.css')}}">
     <link rel="shortcut icon" href="{{ url_for('static', filename = 'img/favicon.jpeg')}} " type="image/x-icon">
 </head>
@@ -46,13 +46,11 @@
         </form>
 
         {% if not current_user.is_authenticated %}
-        <button class="Entrar"> 
-            <a href="{{ url_for('login')}}">Entrar</a> 
-        </button> 
-        
-        <button class="Cadastrar"> 
-            <a href="{{ url_for('cadastrar')}}">Cadastrar</a> 
-        </button>
+        <a href="{{ url_for('login') }}">
+        <img src="{{ url_for('static', filename = 'img/login, cadastro.jpeg') }}" 
+        class="Entrar {{ 'active_login' if request.endpoint == 'login' }}"> 
+        </img> 
+            </a>
 
         {% else %}
         <p>Olá, {{ current_user.nome.splint()[0] }}! </p>

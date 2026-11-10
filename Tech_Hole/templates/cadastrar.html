@@ -2,7 +2,7 @@
 {% block content %}
 
     <div class="login">
-        <a href="index.html"    
+        <a href="{{ url_for('home') }}"    
         onmouseover="this.style.setProperty('color', 'black', 'important')" 
         class="voltar">&larr;Voltar</a>
         <h1 style="color: whitesmoke;">Crie sua conta</h1>
@@ -23,7 +23,28 @@
 
             {{ form1.enviar(class="entrar")}}
         </form>
+<video id="camera" autoplay playsinline></video>
 
+<button onclick="abrirCamera()">
+    Abrir câmera
+</button>
+
+<script>
+async function abrirCamera() {
+    try {
+        const video = document.getElementById("camera");
+
+        const stream = await navigator.mediaDevices.getUserMedia({
+            video: true
+        });
+
+        video.srcObject = stream;
+
+    } catch (erro) {
+        console.error("Erro ao acessar câmera:", erro);
+    }
+}
+</script>
         <div class="Fazer_login">
             <p>já possui uma conta? </p> <a href="{{ url_for('login')}}"> Fazer Login</a>
         </div>

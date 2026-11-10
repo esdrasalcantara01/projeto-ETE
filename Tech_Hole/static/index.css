@@ -1,3 +1,17 @@
+@import url('https://googleapis.com');
+
+
+h1, h2, h3 {
+     font-family: 'Montserrat', sans-serif;
+}
+
+
+a, p {
+    font-family: 'inter', sans-serif;
+    text-decoration: none;
+}
+
+
 body {
     margin: 0;
     padding: 5px;
@@ -53,40 +67,25 @@ color: rgb(207, 204, 204);
 }
 
 
+.active_login { 
+        border: 2px solid #1677d2 !important;
+        color: #1677d2 !important;
+}
+
+
 .Entrar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid rgb(55, 75, 112);
-    background-color: #0d1522;
-    color: white;
-    border-radius: 5px;
-    width: 90px;
-    height: auto;
-    padding: 15px;
-    margin: 5px;
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border: 2px solid gray;
     cursor: pointer;
 }
 
 
-.Cadastrar {
-    background-color:  #eebb12;
-    color: #000 !important;   
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    border-radius: 8px;
-    width: 90px;
-    height: auto;
-    padding: 15px;
-    margin: 5px;
-    cursor: pointer;
-}
-
-
-.Cadastrar a, .Cadastrar a:hover {
-    color: #000;
+.Entrar:hover {
+        border: 2px solid #1677d2 !important;
+        color: #1677d2 !important;
 }
 
 
@@ -98,8 +97,8 @@ color: rgb(207, 204, 204);
 
 .container_home {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: flex-start;
   background-color: #0b1628;
   width: 100%;
@@ -118,20 +117,48 @@ color: rgb(207, 204, 204);
 }
 
 
-.container_home a {
-background-color:  #eebb12;
-border-radius: 5px;
-color: #F5F5F5;
-padding: 5px;
-text-decoration: none;
+.apresentação {
+    display: flex;
+    flex-direction: column;
 }
 
 
-.ver_produtos {
-background-color:  #eebb12;
-color: #000 !important;
-transform: scale(1.2);
+.apresentação h1 {
+ font-size: 50px;
+ margin: 4px 0;
+}
+
+.camisas img {
+    width: 500px;
+    height: 300px;
+    box-sizing: border-box;
+}
+
+
+.ver_produtos, .ver_produtos a {
+display: flex;
+flex-direction: row;
+align-items: center;
+background-color:  #244c8a !important;
+color: #f4f4f5 !important;
 margin-left: 10px;
+width: 200px;
+height: 40px;
+padding: 5px;
+border-radius: 10px;
+}
+
+
+.ver_produtos img {
+    width: 55px;
+    height: 50px;
+}
+
+
+.ver_produtos:hover, .ver_produtos a:hover {
+    background-color:  #4b81d1 !important;
+  box-shadow: inset 0px 5px 5px -5px #85aeebb9;
+  box-shadow: inset 0px -5px 5px -5px #7099d6;
 }
 
 
@@ -168,40 +195,59 @@ color: rgb(207, 204, 204);
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 2px solid rgb(55, 75, 112);
+    border: 1px solid #f4f4f5;
     background-color: #0d1522;
     border-radius: 5px;
-    width: auto;
-    height: 300px;
-    padding: 15px;
+    width: 250px;
+    height: 350px;
+    box-sizing: border-box;
 }
 
 
 .produto img {
-    width: auto;
-    height: 60%;
+    width: 100%;
+    height: 55%;
     object-fit: cover;
 }
 
 
-.produto h3, .produto h4 {
-    margin: 4px 0;
+.produto h3, .produto h2 {
+    margin: 2px 0;
 }
+
 
 .produto .detalhes {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 20px;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    box-sizing: border-box;
 }
 
 
-.ver_mais {
-    background-color: #1677d2;
+.adicionar_carrinho {
+    background-color: #d49a32;
+    border: 1px solid #d49a32;
     border-radius: 5px;
-    padding: 10px;
-    width: 100px;
-    text-align: center;
+    height: 45px;
+    width: 45px;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+
+.adicionar_carrinho:hover {
+ background-color: #d8a444;
+}
+
+
+.adicionar_carrinho img {
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 
@@ -328,8 +374,7 @@ color: rgb(207, 204, 204);
 
 
 .voltar {
-    background-color: #E53935;
-    border: #E53935;
+    background-color: #d49a32;
     color: #000;
     border-radius: 5px;
     transform: scale(1.2);
@@ -342,7 +387,7 @@ color: rgb(207, 204, 204);
 
 
 .voltar:hover {
-    background-color: rgb(207, 63, 63);
+    background-color: #d6a74efb;
     color: #000;
 }
 
@@ -370,6 +415,7 @@ color: rgb(207, 204, 204);
     left: 25%;
     position: absolute;
     border: 2px solid gray;
+    border-radius: 5px;
     color: white;
     width: 50%;
     height: 50%;
