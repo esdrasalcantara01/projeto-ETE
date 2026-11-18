@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="perfil_user">
+        <h2>Meu Perfil:</h3>
+        <div class="perfil">
+            <img src="{{ url_for('static', filename = 'img_perfil/perfil/' + current_user.imagemPerfil) }}" 
+            width="50%"
+            height="auto">
+            <div class="perfil_descrição">
+
+              <div class="acoes_perfil">
+                <button id="editar_perfil" type="button">✎</button>
+                <button id="salvar_perfil" type="button" hidden>✓</button>
+                <button id="cancelar_perfil" type="button" hidden>✕</button>
+              </div>
+              
+              <h1>{{ current_user.nome }}</h1>
+              
+              <p>
+                Nome:
+               <span id="nome_texto">{{ current_user.nome }}</span>
+               <input
+                type="text"
+                id="nome_input"
+                value="{{ current_user.nome }}"
+                hidden>
+              </p>
+
+              <p>
+               E-mail:
+               <span id="email_texto">{{ current_user.email }}</span>
+               <input
+               type="email"
+               id="email_input"
+               value="{{ current_user.email }}"
+               hidden>
+              </p>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="pedidos_user">
+        <h2>Meus Pedidos:</h2>
+        <div class="pedidos">
+
+            <h3>Placa de Vídeo</h3>
+            <img src="https://patoloco.com.br/resize/imagecache/651555f6f1aacbed847b7847b01e0600.jpeg">
+
+        </div>
+    </div>
+
+{% endblock %}

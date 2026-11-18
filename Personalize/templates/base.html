@@ -48,12 +48,16 @@
         {% if not current_user.is_authenticated %}
         <a href="{{ url_for('login') }}">
         <img src="{{ url_for('static', filename = 'img/login, cadastro.jpeg') }}" 
-        class="Entrar {{ 'active_login' if request.endpoint == 'login' }}"> 
+        class="Entrar {{ 'active_login' if request.endpoint == 'login' }}
+        {{ 'active_cadastro' if request.endpoint == 'cadastrar' }}"> 
         </img> 
             </a>
 
         {% else %}
-        <p>Olá, {{ current_user.nome.splint()[0] }}! </p>
+        <a href="{{ url_for('dashboard') }}">
+        <img src="{{ url_for('static', filename = 'img_perfil/perfil/' + current_user.imagemPerfil) }}" 
+        class="Entrar"> 
+            </a>
         {% endif %}
     </ul>
 </div>
@@ -61,5 +65,8 @@
 
     {% block content %}
     {% endblock %}
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
 </body>
 </html>

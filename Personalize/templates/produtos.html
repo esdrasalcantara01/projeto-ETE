@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="área_produtos1">
+    <h2>Produtos</h2>
+    <div class="área_produtos2">
+    
+    <div class="categorias">
+      <h2>Categorias</h2>
+      <ul>
+        <li>Todos</li>
+        <li>Anime & Mangá</li>
+        <li>Geek & Gamer</li>
+        <li>Tecnologia</li>
+        <li>Animais</li>
+        <li>Natureza</li>
+        <li>Minimalistas</li>
+        <li>Frases & Mensagens</li>
+        <li>Fé & Cristãs</li>
+        <li>Esportes & Fitness</li>
+        <li>Música</li>
+        <li>Arte & Abstrato</li>
+        <li>Retrô & Vintage</li>
+        <li>Profissões</li>
+        <li>Datas Especiais</li>
+        <li>Personalize Você Mesmo</li>
+      </ul>
+    </div>
+
+          
+        <div class="destaques_produtos">
+            <div class="produto">
+                <img src="{{ url_for('static', filename = 'img/Camisa_Anime.jpg')}}">
+                <div class="detalhes">
+                        <h3>Camisa anime</h3>
+                        <h2>R$ 65,00</h2>
+
+                    <button class="adicionar_carrinho">
+                        <img src="{{ url_for('static', filename = 'img/carrinho.png')}}">
+                    </button>
+                </div>
+            </div>
+    
+    
+            <div class="produto">
+                <img src="{{ url_for('static', filename = 'img/Camisa_Lobo.jpg')}}">
+                <div class="detalhes">
+                    <h3>Camisa lobo</h3>
+                    <h2>R$ 60,00</h2> 
+                    <button class="adicionar_carrinho">
+                        <img src="{{ url_for('static', filename = 'img/carrinho.png')}}">
+                    </button>
+                </div>
+            </div>
+    
+    
+            <div class="produto">
+
+                <img src="{{ url_for('static', filename = 'img/Camisa_Tech.jpg')}}">
+                <div class="detalhes">
+                    <h3>Camisa tech</h3>
+                    <h2>R$ 60,00</h2> 
+                    <button class="adicionar_carrinho">
+                        <img src="{{ url_for('static', filename = 'img/carrinho.png')}}">
+                    </button>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+</div>
+{% endblock %}

@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <div class="login">
+    <div class="login1">
         <a href="{{ url_for('home') }}"
         onmouseover="this.style.setProperty('color', 'black', 'important')" 
         class="voltar">&larr;Voltar</a>
@@ -9,12 +9,16 @@
         <p>Faça login para acessar sua conta.</p>
 
         <form method="post">
-            Seu E-mail:
-            <input type="email" placeholder="E-mail">
+            {{ form.csrf_token }}
+            {{ form.hidden_tag() }}
 
-            Sua Senha:
-            <input type="password" placeholder="senha">
-            <button type="submit" class="entrar">Entrar</button>
+            <p>Seu E-mail:</p>
+            {{ form.email(placeholder = "E-mail", class="input_form") }}
+
+            <p>Sua Senha:</p>
+            {{ form.senha(placeholder = "senha, ", class="input_form") }}
+
+            {{ form.enviar(class="entrar")}}
         </form>
 
         <div class="Fazer_login">
@@ -23,4 +27,4 @@
                 Cadastre-se</a>
         </div>
     </div>
-{% endblock %}
+{% endblock %}  

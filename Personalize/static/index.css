@@ -6,9 +6,14 @@ h1, h2, h3 {
 }
 
 
-a, p {
+a, p, li {
     font-family: 'inter', sans-serif;
     text-decoration: none;
+}
+
+
+form input {
+  color: whitesmoke;
 }
 
 
@@ -68,6 +73,12 @@ color: rgb(207, 204, 204);
 
 
 .active_login { 
+        border: 2px solid #1677d2 !important;
+        color: #1677d2 !important;
+}
+
+
+.active_cadastro { 
         border: 2px solid #1677d2 !important;
         color: #1677d2 !important;
 }
@@ -187,7 +198,8 @@ color: rgb(207, 204, 204);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 20px;
+    gap: 10px !important;
+    margin: 10px;
 }
 
 
@@ -195,9 +207,8 @@ color: rgb(207, 204, 204);
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid #f4f4f5;
     background-color: #0d1522;
-    border-radius: 5px;
+    border-radius: 8px;
     width: 250px;
     height: 350px;
     box-sizing: border-box;
@@ -208,6 +219,8 @@ color: rgb(207, 204, 204);
     width: 100%;
     height: 55%;
     object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 
 
@@ -224,6 +237,9 @@ color: rgb(207, 204, 204);
     height: 100%;
     padding: 5px;
     box-sizing: border-box;
+    background-color: #162b4d;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
 
@@ -260,7 +276,7 @@ color: rgb(207, 204, 204);
 
 .área_produtos2 {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     color: white;
 }
 
@@ -272,10 +288,16 @@ color: rgb(207, 204, 204);
   background-color: #0d1522;
   border-radius: 5px;
   padding: 5px;
-  margin: 10px;
+  margin: auto;
   height: auto;
-  width: 180px;
+  width: 100%;
   color: rgb(182, 175, 175);
+  overflow-x: hidden;
+}
+
+
+.categorias:hover {
+    overflow-x: auto;
 }
 
 
@@ -288,11 +310,16 @@ color: rgb(207, 204, 204);
 .categorias ul {
     list-style: none;
     align-items: flex-start;
+    margin: 0;
+    padding: 5px;
+  display: flex;
+  flex-direction: row;
 }
 
 
 .categorias li {
     padding: 5px;
+    white-space: nowrap;
 }
 
 
@@ -301,6 +328,21 @@ color: rgb(207, 204, 204);
     border-radius: 5px;
     color: white;
     cursor: pointer;
+}
+
+
+.categorias::-webkit-scrollbar {
+    height: 5px;
+}
+
+
+.categorias::-webkit-scrollbar-track {
+ background: #171718;
+}
+
+
+.categorias::-webkit-scrollbar-thumb {
+ background: #1677d2
 }
 
 
@@ -357,13 +399,14 @@ color: rgb(207, 204, 204);
 
 .entrar {
     background-color: #ffd343;
+    color: #000;
     width: 100%;
     height: 35px;
     font-size: 20px;
     border-radius: 5px;
     border: none;
     padding: auto;
-    margin: 8px;
+    margin: 3px;
 }
 
 
@@ -407,7 +450,7 @@ color: rgb(207, 204, 204);
 }
 
 
-.login {
+.login1 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -417,14 +460,14 @@ color: rgb(207, 204, 204);
     border: 2px solid gray;
     border-radius: 5px;
     color: white;
-    width: 50%;
+    width: 500px;
     height: 50%;
     padding: 50px;
     background-color: #090a0a0e;
 }
 
 
-.login form {
+.login1 form {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -433,7 +476,50 @@ color: rgb(207, 204, 204);
 }
 
 
-.login a:hover {
+.login1 a:hover {
+    color: blue;
+}
+
+
+.login2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    top: 20%;
+    left: 15%;
+    position: absolute;
+    border: 2px solid gray;
+    border-radius: 5px;
+    color: white;
+    width: 80%;
+    height: 55%;
+    background-color: #090a0a0e;
+}
+
+
+.login3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    color: white;
+    width: 100%;
+    padding: 15px;
+    background-color: #090a0a0e;
+    box-sizing: border-box;
+}
+
+
+.login3 form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+.login3 a:hover {
     color: blue;
 }
 
@@ -441,11 +527,185 @@ color: rgb(207, 204, 204);
 input {
     border-radius: 5px;
     width: 100%;
-    height: 25px;
+    height: 25%;
     padding: 5px;
     background-color: #2c333d7a;
     border: 2px solid #3b3a3a4f;
+    box-sizing: border-box;
 } 
+
+
+.foto_perfil {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ padding: auto;
+ width: 100%;
+ height: 100%;
+ background-image: linear-gradient(
+             rgba(0, 0, 0, 0.5), 
+             rgba(0, 0, 0, 0.5)), 
+             url('img/cadastrar.jpeg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  box-sizing: border-box;
+}
+
+
+.foto_preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+
+.foto_preview h3 {
+    width: 100%;
+    margin: 0 0 10px 0;
+}
+
+
+.foto_preview img {
+    display: block;
+    width: 150px;
+    height: 150px;
+    box-sizing: border-box;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+.opções_foto {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+}
+
+
+.opções_foto button {
+    background: transparent;
+    padding: 0;
+    border: none;
+}
+
+
+.opções_foto img {
+    display: block;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    box-sizing: border-box;
+}
+
+/* Esconde o input sem desativá-lo */
+.input_foto {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    overflow: hidden;
+}
+
+/* Efeito ao passar o mouse */
+.opções_foto button:hover,
+.opções_foto .botao_galeria:hover {
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+/* Indicador de foco para navegação por teclado */
+.opções_foto button:focus-visible,
+.opções_foto .botao_galeria:focus-within {
+    outline: 2px solid #e0a32e;
+    outline-offset: 3px;
+}
+
+
+.imagem_container {
+    position: relative;
+    width: 180px;
+    height: 180px;
+}
+
+
+#preview,
+#camera {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+#camera {
+    display: none;
+    transform: scaleX(-1);
+
+}
+
+#capturar {
+    display: none;
+    width: 45px;
+    height: 45px;
+    padding: 0;
+    margin: 5px;
+    border: none;
+    background: transparent;
+    appearance: none;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+#capturar img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    object-fit: fill;
+}
+
+#cancelar2 {
+    margin: 5px;
+ display: none;
+ background-color: #162b4d;
+ color: #121212;
+ border: none;
+}
+
+
+#cancelar1 {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+ background-color: #162b4d;
+ color: #121212;
+ border: none;
+}
+
+
+.botoes {
+    display: flex;
+    flex-direction: row;
+}
 
 
 .perfil_user {
@@ -472,9 +732,90 @@ input {
 
 
 .perfil_descrição {
+    position: relative;
+}
+
+
+.acoes_perfil {
+    position: absolute;
+    top: 5px;
+    right: 5px;
     display: flex;
-    flex-direction: column;
-    padding-right: 25px;
+    gap: 5px;
+}
+
+
+.acoes_perfil button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+
+#editar_perfil {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    color: whitesmoke;
+}
+
+
+#salvar_perfil {
+    color: white;
+    background-color: #1677d2;
+    border-radius: 5px;
+}
+
+
+#cancelar_perfil {
+    color: black;
+    background-color: #eebb12;
+    border-radius: 5px;
+}
+
+
+.perfil_descrição:hover #editar_perfil,
+#editar_perfil:focus-visible {
+    opacity: 1;
+}
+
+
+#campos_perfil input {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+}
+
+
+#nome_input,
+#email_input {
+    font: inherit;
+    color: inherit;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid black;
+    border-radius: 4px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+
+#nome_input {
+    width: 12ch;
+}
+
+
+#email_input {
+    width: 24ch;
+}
+
+
+[hidden] {
+    display: none !important;
 }
 
 
@@ -508,12 +849,3 @@ input {
     width: 50%;
 }
 
-
-.enviar {
-    display: flex;
-    background-color: #E53935;
-    border: #E53935;
-    border-radius: 5px;
-    transform: scale(1.2);
-    padding: 5px;
-}
