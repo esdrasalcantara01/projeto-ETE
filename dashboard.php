@@ -1,12 +1,42 @@
-{% extends 'base.html' %}
-{% block content %}
+<?php
+
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+if (empty($_SESSION['usuarios_id'])) {
+    header('Location: /login.php');
+    exit;
+}
+
+require __DIR__ . '/config/conexao.php';
+
+$consulta = $pdo->prepare(
+    'SELECT nome, email, imagemPerfil FROM usuarios WHERE id = ?'
+);
+
+$consulta->execute([$_SESSION['usuarios_id']]);
+$usuario = $consulta->fetch(PDO::FETCH_ASSOC);
+
+if (!$usuario) {
+    exit('Usuário não encontrado.');
+}
+
+require __DIR__ . '/includes/cabeçalho.php';
+?>
+
 
     <div class="perfil_user">
         <h2>Meu Perfil:</h3>
-        <div class="perfil">
-            <img src="{{ url_for('static', filename = 'img_perfil/perfil/' + current_user.imagemPerfil) }}" 
-            width="50%"
-            height="auto">
+        <div class="perfil"><img
+    src="/assets/img_perfil/perfil/<?= htmlspecialchars(
+        rawurlencode(basename($usuario['imagemPerfil'] ?? '')),
+        ENT_QUOTES,
+        'UTF-8'
+    ) ?>"
+    width="50%"
+    alt="Foto de perfil"
+>
             <div class="perfil_descrição">
 
               <div class="acoes_perfil">
@@ -15,11 +45,16 @@
                 <button id="cancelar_perfil" type="button" hidden>✕</button>
               </div>
               
-              <h1>{{ current_user.nome }}</h1>
+              <h1>
+                <?= htmlspecialchars($usuario['nome'], ENT_QUOTES, 'UTF-8') ?>
+              </h1>
               
               <p>
                 Nome:
-               <span id="nome_texto">{{ current_user.nome }}</span>
+               <span id="nome_texto">
+                <?= htmlspecialchars($usuario['nome'], ENT_QUOTES, 'UTF-8') ?>
+               </span>
+
                <input
                 type="text"
                 id="nome_input"
@@ -29,7 +64,10 @@
 
               <p>
                E-mail:
-               <span id="email_texto">{{ current_user.email }}</span>
+               <span id="email_texto">
+                <?= htmlspecialchars($usuario['nome'], ENT_QUOTES, 'UTF-8') ?>
+               </span>
+
                <input
                type="email"
                id="email_input"
@@ -51,4 +89,3 @@
         </div>
     </div>
 
-{% endblock %}

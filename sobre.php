@@ -1,5 +1,8 @@
-{% extends 'base.html' %}
-{% block content %}
+<?php
+
+require __DIR__ . '/includes/cabeçalho.php';
+?>
+
 
 <h1>Sobre:</h1>
 
@@ -30,4 +33,3 @@
     </ul>
 </div>
 
-{% endblock %}

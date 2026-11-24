@@ -1,6 +1,5 @@
-{% extends 'base.html' %}
+<?php require __DIR__ . '/includes/cabeçalho.php'; ?>
 
-{% block content %}
 
 <div class="home">
     
@@ -16,8 +15,8 @@
                 
             <div class="ver_produtos">
                 
-                <a href="{{ url_for('produtos') }}">
-                    <img src="{{ url_for('static', filename = 'img/carrinho.png')}}">
+                <a href="/produtos.php">
+                    <img src="assets/img/carrinho.png">
                     Ver Produtos
                 </a>
             </div>
@@ -27,7 +26,7 @@
 
         <div class="camisas">
             
-            <img src="{{ url_for('static', filename = 'img/camisas.png') }}">
+            <img src="assets/img/camisas.png">
         </div>
 
     </div>
@@ -37,25 +36,25 @@
     
         <div class="destaques_produtos">
             <div class="produto">
-                <img src="{{ url_for('static', filename = 'img/Camisa_Anime.jpg')}}">
+                <img src="assets/img/Camisa_Anime.jpg">
                 <div class="detalhes">
                         <h3>Camisa anime</h3>
                         <h2>R$ 65,00</h2> 
 
                     <button class="adicionar_carrinho">
-                        <img src="{{ url_for('static', filename = 'img/carrinho.png')}}">
+                        <img src="assets/img/carrinho.png">
                     </button>
                 </div>
             </div>
     
     
             <div class="produto">
-                <img src="{{ url_for('static', filename = 'img/Camisa_Lobo.jpg')}}">
+                <img src="assets/img/Camisa_Lobo.jpg">
                 <div class="detalhes">
                     <h3>Camisa lobo</h3>
                     <h2>R$ 60,00</h2> 
                     <button class="adicionar_carrinho">
-                        <img src="{{ url_for('static', filename = 'img/carrinho.png')}}">
+                        <img src="assets/img/carrinho.png">
                     </button>
                 </div>
             </div>
@@ -63,12 +62,12 @@
     
             <div class="produto">
 
-                <img src="{{ url_for('static', filename = 'img/Camisa_Tech.jpg')}}">
+                <img src="assets/img/Camisa_Tech.jpg">
                 <div class="detalhes">
                     <h3>Camisa tech</h3>
                     <h2>R$ 60,00</h2> 
                     <button class="adicionar_carrinho">
-                        <img src="{{ url_for('static', filename = 'img/carrinho.png')}}">
+                        <img src="assets/img/carrinho.png">
                     </button>
                 </div>
             </div>
@@ -76,4 +75,7 @@
     </div>
     
 </div>
-{% endblock %}
+
+<?php require __DIR__ . '/includes/rodape.php'; ?>
+</body>
+</html>
